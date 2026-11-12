@@ -20,7 +20,7 @@ public class CorsConfig {
         config.setAllowCredentials(true);
         
         // Libera explicitamente as URLs do seu front-end (Vite e padrões do Vue)
-        config.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"));
+        config.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173", "https://tide-app-gbk3.onrender.com"));
         
         // Libera todos os cabeçalhos (evita travamento por Content-Type, etc)
         config.setAllowedHeaders(List.of("*"));
