@@ -41,5 +41,5 @@ public class Ocorrencia {
     }
 
     // Estrutura auxiliar interna para formatar o JSON de saída
-    public record CoordenadasGeo(double longitude, double latitude) {}
+    public record CoordenadasGeo(Double longitude, Double latitude) {}
 }

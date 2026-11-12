@@ -13,7 +13,7 @@ RUN mvn dependency:go-offline -B
 COPY src ./src
 
 # Compila o projeto Spring Boot 4.1.2 gerando o ficheiro .jar
-RUN mvn clean package -DskipTests -e -X
+RUN mvn clean package -DskipTests -B
 
 # =========================================================================
 # Etapa 2: Execução (Runtime leve)
@@ -26,8 +26,8 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Configura o Spring Boot para escutar a porta que o Render atribuir dinamicamente
-ENV SERVER_PORT=${PORT:-8080}
-EXPOSE 8080
+#ENV SERVER_PORT=${PORT:-8080}
+EXPOSE 10000
 
 # Inicia a aplicação
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-XX:MaxRAMPercentage=75", "-jar", "app.jar"]

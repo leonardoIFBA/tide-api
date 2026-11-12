@@ -18,6 +18,6 @@ public record OcorrenciaDTO(
     String nomeVitima,
     String relato,
     LocalDateTime dataHora,
-    double latitude,
-    double longitude
+    Double latitude,
+    Double longitude
 ) {}
